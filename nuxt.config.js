@@ -1,4 +1,12 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/nuxt-project/'
+  }
+} : {}
+// LIVE DEMO https://css-tricks.com/simple-server-side-rendering-routing-page-transitions-nuxt-js/
+// GIT{PAGES} DEPLOYMENT https://nuxtjs.org/faq/github-pages/
 module.exports = {
+  ...routerBase,
   /*
   ** Headers of the page
   */
