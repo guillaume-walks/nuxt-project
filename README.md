@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+[demo](https://guillaume-walks.github.io/nuxt-project/)
+
 ``` bash
 # install dependencies
 $ npm install # Or yarn install
