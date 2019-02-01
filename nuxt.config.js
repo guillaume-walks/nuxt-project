@@ -3,7 +3,8 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     base: '/nuxt-project/'
   }
 } : {}
-// LIVE DEMO https://css-tricks.com/simple-server-side-rendering-routing-page-transitions-nuxt-js/
+// TUTO DEMO https://css-tricks.com/simple-server-side-rendering-routing-page-transitions-nuxt-js/
+// OTHER DEMO https://scotch.io/tutorials/build-a-server-side-rendered-vue-app-with-nuxtjs
 // GIT{PAGES} DEPLOYMENT https://nuxtjs.org/faq/github-pages/
 
 module.exports = {
