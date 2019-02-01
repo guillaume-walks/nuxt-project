@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Welcome!</h1>
+    <h1>Welcome! App</h1>
     <p><nuxt-link to="/product">Product page</nuxt-link></p>
     <p><nuxt-link to="/contact">contact page</nuxt-link></p>
   </div>
