@@ -1,8 +1,21 @@
 <template>
   <div>
+    <Navbar></Navbar>
     <nuxt/>
   </div>
 </template>
+
+
+<script>
+  import Navbar from '../components/Navbar'
+
+  export default {
+    components: {
+      Navbar
+    }
+  }
+</script>
+
 
 <style>
 html, body {
@@ -14,14 +27,13 @@ html, body {
 }
 
 a, a:visited {
-  color: #3edada;
   text-decoration: none;
 }
 
 .container {
   padding: 60px;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   background: #444;
 }
 
