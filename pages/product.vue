@@ -26,7 +26,7 @@ export default {
     }
   },
   asyncData ({ params }) {
-    return axios.get(`http://jsonplaceholder.typicode.com/posts`)
+    return axios.get(`https://jsonplaceholder.typicode.com/posts`)
     .then((res) => {
       return { posts: res.data }
     })
