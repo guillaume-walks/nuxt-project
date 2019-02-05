@@ -15,9 +15,6 @@
           <template v-for="route in routes">
             <nuxt-link class="navbar-item" :key="route.name" :to="route.path">{{ route.name }}</nuxt-link>
           </template>
-          <!-- <nuxt-link class="navbar-item" to="/">Home</nuxt-link>
-          <nuxt-link class="navbar-item" to="/product">Products</nuxt-link>
-          <nuxt-link class="navbar-item" to="/contact">Contact</nuxt-link> -->
         </div>
       </div>
     </nav>
