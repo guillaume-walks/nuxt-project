@@ -17,6 +17,7 @@
     "deploy-gp": "npm run generate:gh-pages && npm run deploy"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
