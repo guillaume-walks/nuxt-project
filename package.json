@@ -14,7 +14,7 @@
     "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
-    "deploy-gp": "npm run generate:gh-pages && npm run deploy",
+    "deploy-gp": "npm run generate:gh-pages && npm run commit && npm run deploy",
     "commit": "git add . && git commit -m 'add build'"
   },
   "dependencies": {
