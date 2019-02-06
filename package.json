@@ -15,7 +15,8 @@
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "deploy-gp": "npm run generate:gh-pages && npm run commit && npm run deploy",
-    "commit": "git add . && git commit -m 'add build'"
+    "commit": "git add . && git commit -m 'add build'",
+    "serve": "http-server ./dist -i"
   },
   "dependencies": {
     "axios": "^0.18.0",
