@@ -9,6 +9,10 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 module.exports = {
   ...routerBase,
+  server: {
+    port: 8000, // default: 3000
+    host: 'localhost', // default: localhost, '0.0.0.0'
+  },
   /*
   ** Headers of the page
   */
@@ -36,7 +40,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',

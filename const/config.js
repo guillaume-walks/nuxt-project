@@ -1,2 +1,4 @@
-export const root = `http://localhost:3000`
+export const port = 4000
+export const domain = 'localhost'
+export const root = `http://${domain}:${port}`
 export const productPath = `${root}/products`

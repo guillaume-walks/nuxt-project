@@ -5,15 +5,15 @@
       <nuxt-link to="/">Home page</nuxt-link>
     </p>
 
-    <ul v-if="products && products.length">
-      <li v-for="product of products" :key="product.id">
-        <card/>
-        <p>
+    <div class="columns" v-if="products && products.length">
+      <div class="column" v-for="product of products" :key="product.id">
+        <card :info="product"/>
+        <!-- <p>
           <strong>{{product.name}}</strong>
         </p>
-        <p>{{product.description}}</p>
-      </li>
-    </ul>
+        <p>{{product.description}}</p>-->
+      </div>
+    </div>
     <ul v-if="errors && errors.length">
       <li v-for="error of errors" :key="error">{{error.message}}</li>
     </ul>
@@ -35,7 +35,6 @@ export default {
   asyncData({ params }) {
     console.log(productPath);
     return axios.get(`${productPath}`).then(res => {
-      debugger;
       return { products: res.data };
     });
   }

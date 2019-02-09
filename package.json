@@ -5,7 +5,7 @@
   "author": "guillaume <guillaume@takewalks.com>",
   "private": true,
   "scripts": {
-    "dev": "json-server --watch server/db.json | nuxt",
+    "dev": "nuxt --port 3000 & npm run jsonserver",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -16,7 +16,8 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "deploy-gp": "npm run generate:gh-pages && npm run commit && npm run deploy",
     "commit": "git add . && git commit -m 'add build'",
-    "serve": "http-server ./dist -i"
+    "serve": "http-server ./dist -i",
+    "jsonserver": "json-server --watch server/db.json --port 4000"
   },
   "dependencies": {
     "axios": "^0.18.0",
