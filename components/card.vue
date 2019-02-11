@@ -19,7 +19,7 @@
       </div>
 
       <div class="content">
-        {{ info.description }}
+        <p>{{ info.description }}</p>
         <a>@bulmaio</a>.
         <a href="#">#css</a>
         <a href="#">#responsive</a>
@@ -41,3 +41,10 @@ export default {
   }
 };
 </script>
+<style>
+div.content > p {
+  text-overflow: ellipsis;
+  height: 100px;
+  overflow: hidden;
+}
+</style>
