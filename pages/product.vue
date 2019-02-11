@@ -8,10 +8,6 @@
     <div class="main-container" v-if="products && products.length">
       <div class v-for="product of products" :key="product.id">
         <card :info="product"/>
-        <!-- <p>
-          <strong>{{product.name}}</strong>
-        </p>
-        <p>{{product.description}}</p>-->
       </div>
     </div>
     <ul v-if="errors && errors.length">
