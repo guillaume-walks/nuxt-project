@@ -1,15 +1,16 @@
 <template>
   <div class="container">
-    <h1>This is the product page</h1>
-    <p>
-      <nuxt-link to="/">Home page</nuxt-link>
-    </p>
-
-    <div class="main-container" v-if="products && products.length">
-      <div class v-for="product of products" :key="product.id">
+    <h1>Search a product by name...</h1>
+    <input class="input" type="text" v-model="search" placeholder="Search">
+    results ({{filtered.length}})
+    <div class="main-container" v-if="products && filtered.length">
+      <div class v-for="product of filtered" :key="product.id">
         <card :info="product"/>
       </div>
     </div>
+    <template v-else>
+      <error-message/>
+    </template>
     <ul v-if="errors && errors.length">
       <li v-for="error of errors" :key="error">{{error.message}}</li>
     </ul>
@@ -19,14 +20,24 @@
 import axios from "axios";
 import { productPath } from "@/const/config";
 import Card from "@/components/card";
+import ErrorMessage from "@/components/error-message";
 export default {
   components: {
-    Card
+    Card,
+    ErrorMessage
   },
   data() {
     return {
-      errors: []
+      errors: [],
+      search: ""
     };
+  },
+  computed: {
+    filtered() {
+      return this.products.filter(item => {
+        return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
+      });
+    }
   },
   asyncData({ params }) {
     console.log(productPath);
