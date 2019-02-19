@@ -5,7 +5,7 @@
     results ({{filtered.length}})
     <div class="main-container" v-if="products && filtered.length">
       <div class v-for="product of filtered" :key="product.id">
-        <card :info="product"/>
+        <card :info="product" :callback="select"/>
       </div>
     </div>
     <template v-else>
@@ -29,8 +29,15 @@ export default {
   data() {
     return {
       errors: [],
-      search: ""
+      search: "",
+      selected: null
     };
+  },
+  methods: {
+    select(el) {
+      console.log(el);
+      this.selected = el;
+    }
   },
   computed: {
     filtered() {
