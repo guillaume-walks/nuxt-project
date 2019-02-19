@@ -11,7 +11,15 @@
 </template>
 
 <style>
-@import "~/assets/style.css";
+.navbar,
+.navbar-menu {
+  background-color: #222;
+  color: white;
+}
+a {
+  color: white;
+}
+/* @import "~/assets/style.css"; */
 .container {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
