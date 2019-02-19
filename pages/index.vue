@@ -11,13 +11,18 @@
 </template>
 
 <style>
+a.navbar-item:hover {
+  background: rgb(80, 80, 80);
+  color: aqua;
+}
 .navbar,
 .navbar-menu {
   background-color: #222;
-  color: white;
+  color: aqua;
 }
-a {
-  color: white;
+.navbar-item,
+.navbar-link {
+  color: aqua;
 }
 /* @import "~/assets/style.css"; */
 .container {
