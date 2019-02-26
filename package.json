@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "booking-widget-vue": "^0.1.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

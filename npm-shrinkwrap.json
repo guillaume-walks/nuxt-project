@@ -1834,6 +1834,22 @@
         "type-is": "~1.6.16"
       }
     },
+    "booking-widget-vue": {
+      "version": "0.1.2",
+      "resolved": "https://registry.npmjs.org/booking-widget-vue/-/booking-widget-vue-0.1.2.tgz",
+      "integrity": "sha512-7c6ZCUBidgqcKvK/oYZgMPFjhpL1xiq9Nk6/V+LodXUOHGvRAn8MGKed05uXNuhR8NEQzY/6ypcgrwqcZ9aQxQ==",
+      "requires": {
+        "lodash.times": "^4.3.2",
+        "vue": "^2.6.7"
+      },
+      "dependencies": {
+        "vue": {
+          "version": "2.6.7",
+          "resolved": "https://registry.npmjs.org/vue/-/vue-2.6.7.tgz",
+          "integrity": "sha512-g7ADfQ82QU+j6F/bVDioVQf2ccIMYLuR4E8ev+RsDBlmwRkhGO3HhgF4PF9vpwjdPpxyb1zzLur2nQ2oIMAMEg=="
+        }
+      }
+    },
     "boolbase": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz",
@@ -5729,6 +5745,11 @@
       "requires": {
         "lodash._reinterpolate": "~3.0.0"
       }
+    },
+    "lodash.times": {
+      "version": "4.3.2",
+      "resolved": "https://registry.npmjs.org/lodash.times/-/lodash.times-4.3.2.tgz",
+      "integrity": "sha1-Ph8lZcQxdU1Uq1fy7RdBk5KFyh0="
     },
     "lodash.uniq": {
       "version": "4.5.0",

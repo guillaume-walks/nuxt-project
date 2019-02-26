@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1>Search a product by name...</h1>
+    <BookingWidget name="guillaume"/>
     <input class="input" type="text" v-model="search" placeholder="Search">
     results ({{filtered.length}})
     <div class="main-container" v-if="products && filtered.length">
@@ -17,10 +18,14 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
 import axios from "axios";
+import BookingWidget from "booking-widget-vue";
 import { productPath } from "@/const/config";
 import Card from "@/components/card";
 import ErrorMessage from "@/components/error-message";
+
+Vue.use(BookingWidget);
 export default {
   components: {
     Card,
