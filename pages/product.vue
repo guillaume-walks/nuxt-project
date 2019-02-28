@@ -1,10 +1,18 @@
 <template>
-  <div class="container">
-    <h1>Search a product by name...</h1>
-    <BookingWidget name="guillaume"/>
-    <input class="input" type="text" v-model="search" placeholder="Search">
-    results ({{filtered.length}})
-    <div class="main-container" v-if="products && filtered.length">
+  <div>
+    <div class="container">
+      <h1>Search a product by name...</h1>
+      <BookingWidget name="guillaume"/>
+      <input class="input" type="text" v-model="search" placeholder="Search">
+      results ({{filtered.length}})
+    </div>
+    <div id="main">
+      <section id="one" class="tiles">
+        <Tile v-for="product of filtered" :key="product.id"/>
+      </section>
+    </div>
+
+    <!-- <div class="main-container" v-if="products && filtered.length">
       <div class v-for="product of filtered" :key="product.id">
         <card :info="product" :callback="select"/>
       </div>
@@ -14,12 +22,13 @@
     </template>
     <ul v-if="errors && errors.length">
       <li v-for="error of errors" :key="error">{{error.message}}</li>
-    </ul>
+    </ul>-->
   </div>
 </template>
 <script>
 import Vue from "vue";
 import axios from "axios";
+import Tile from "~/components/tile";
 import BookingWidget from "booking-widget-vue";
 import { productPath } from "@/const/config";
 import Card from "@/components/card";
@@ -29,7 +38,8 @@ Vue.use(BookingWidget);
 export default {
   components: {
     Card,
-    ErrorMessage
+    ErrorMessage,
+    Tile
   },
   data() {
     return {
@@ -61,5 +71,4 @@ export default {
 </script>
 
 <style >
-
 </style>
