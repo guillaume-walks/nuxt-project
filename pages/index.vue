@@ -13,7 +13,7 @@
 <style>
 a.navbar-item:hover {
   background: rgb(80, 80, 80);
-  color: aqua;
+  color: #9bf1ff;
 }
 .navbar,
 .navbar-menu {

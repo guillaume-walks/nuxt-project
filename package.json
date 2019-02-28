@@ -5,7 +5,7 @@
   "author": "guillaume <guillaume@takewalks.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt --port 3000 & npm run jsonserver",
+    "dev": "nuxt --port 3000",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
