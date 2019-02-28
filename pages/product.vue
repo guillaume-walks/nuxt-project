@@ -61,16 +61,5 @@ export default {
 </script>
 
 <style >
-.container {
-  background: #222;
-}
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.main-container > div {
-  width: 31%;
-  margin-bottom: 3.5%;
-}
+
 </style>

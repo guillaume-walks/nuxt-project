@@ -1,28 +1,10 @@
 <template>
-  <div class="container-fluid">
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <!-- <img src="http://bulma.io/images/bulma-logo.png" alt="Logo"> -->
-          Project
-        </a>
-
-        <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div class="navbar-menu" :class="{ 'is-active': showNav }">
-        <div class="navbar-end">
-          <template v-for="route in routes">
-            <nuxt-link class="navbar-item" :key="route.name" :to="route.path">{{ route.name }}</nuxt-link>
-          </template>
-        </div>
-      </div>
+  <header id="header" class="reveal alt">
+    <a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+    <nav>
+      <a href="#menu">Menu</a>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -38,12 +20,6 @@ export default {
 </script>
 
 <style>
-.navbar-burger {
-  color: grey;
-}
-.navbar{
-  text-transform: uppercase;
-  font-weight: 700;
-}
+
 </style>
 

@@ -22,7 +22,7 @@ html,
 body {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  background: #222;
+  /* background: #222; */
   color: white;
   width: 100vw;
   height: 100vh;
@@ -37,7 +37,7 @@ a:visited {
   padding: 60px;
   /* width: 100vw;
   height: 100vh; */
-  background: #444;
+  /* background: #444; */
 }
 
 .page-enter-active {
