@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     toggle() {
-      var element = document.getElementsByTagName("body")[0];
+      const element = document.getElementsByTagName("body")[0];
       element.classList.toggle("is-menu-visible");
     }
   }
