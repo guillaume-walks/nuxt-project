@@ -8,21 +8,9 @@
     </div>
     <div id="main">
       <section id="one" class="tiles">
-        <Tile v-for="product of filtered" :key="product.id"/>
+        <Tile v-for="product of filtered" :key="product.id" :info="product" :callback="select"/>
       </section>
     </div>
-
-    <!-- <div class="main-container" v-if="products && filtered.length">
-      <div class v-for="product of filtered" :key="product.id">
-        <card :info="product" :callback="select"/>
-      </div>
-    </div>
-    <template v-else>
-      <error-message/>
-    </template>
-    <ul v-if="errors && errors.length">
-      <li v-for="error of errors" :key="error">{{error.message}}</li>
-    </ul>-->
   </div>
 </template>
 <script>

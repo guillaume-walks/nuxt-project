@@ -1,20 +1,39 @@
 <template>
-  <article style="background-image: url(&quot;images/pic01.jpg&quot;);">
+  <!-- <article :style="`background-image: url(${info.url});`"> -->
+  <article :style="`background-image: url(${rand()});`">
     <span class="image" style="display: none;">
-      <img src="images/pic01.jpg" alt>
+      <img :src="info.url" alt>
     </span>
     <header class="major">
       <h3>
-        <a href="landing.html" class="link">Aliquam</a>
+        <a class="link">{{ info.name }}</a>
       </h3>
-      <p>Ipsum dolor sit amet</p>
+      <p>{{ info.email }} {{ info.date }}</p>
     </header>
-    <a href="landing.html" class="link primary"></a>
+    <a class="link primary"></a>
   </article>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    info: {
+      required: true
+    },
+    callback: {
+      type: Function
+    }
+  },
+  methods: {
+    rand() {
+      const t = Math.floor(Math.random() * 100);
+      return `https://picsum.photos/200/300?image=${t}`;
+    }
+  },
+  created() {
+    console.log(this);
+  }
+};
 </script>
 
 <style>
