@@ -41,5 +41,9 @@ export default {
 .navbar-burger {
   color: grey;
 }
+.navbar{
+  text-transform: uppercase;
+  font-weight: 700;
+}
 </style>
 

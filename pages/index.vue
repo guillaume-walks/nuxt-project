@@ -18,11 +18,11 @@ a.navbar-item:hover {
 .navbar,
 .navbar-menu {
   background-color: #222;
-  color: aqua;
+  color: #9bf1ff;
 }
 .navbar-item,
 .navbar-link {
-  color: aqua;
+  color: #9bf1ff;
 }
 /* @import "~/assets/style.css"; */
 .container {
