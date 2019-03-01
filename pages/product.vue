@@ -8,7 +8,7 @@
       results ({{filtered.length}})
     </div>-->
     
-    <Search />
+    <Search @clicked="callback"/>
     results ({{filtered.length}})
 
 
@@ -35,12 +35,10 @@ import Hero from "~/components/hero";
 import Search from "~/components/search";
 import Linear from "~/components/linear";
 import Paragraph from "~/components/paragraph";
-import BookingWidget from "booking-widget-vue";
 import { productPath } from "@/const/config";
 import Card from "@/components/card";
 import ErrorMessage from "@/components/error-message";
 
-Vue.use(BookingWidget);
 export default {
   components: {
     Card,
@@ -62,6 +60,9 @@ export default {
     select(el) {
       console.log(el);
       this.selected = el;
+    },
+    callback (e) {
+      console.log('callback,,,,', e)
     }
   },
   computed: {

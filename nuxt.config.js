@@ -40,11 +40,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true
-    },
+    // splitChunks: {
+    //   layouts: true,
+    //   pages: true,
+    //   commons: true
+    // },
     /*
     ** Run ESLint on save
     */
