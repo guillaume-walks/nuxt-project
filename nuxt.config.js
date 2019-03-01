@@ -32,6 +32,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' }
     ]
   },
+  css: [
+    '@/assets/style/custom.scss'
+  ],
   /*
   ** Customize the progress bar color
   */

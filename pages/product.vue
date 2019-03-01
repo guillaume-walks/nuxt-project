@@ -24,6 +24,7 @@
     <Paragraph/>
 
     <section class="spotlights">
+      
       <Linear/>
       <Linear/>
       <Linear/>
