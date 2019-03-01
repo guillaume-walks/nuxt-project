@@ -1,0 +1,3 @@
+.spotlights > section > .image img {
+  object-fit: cover;
+}
