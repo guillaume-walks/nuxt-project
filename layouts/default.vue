@@ -56,9 +56,9 @@ body {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   /* background: #222; */
-  color: white;
-  width: 100vw;
-  height: 100vh;
+  /* color: white; */
+  /* width: 100vw;
+  height: 100vh; */
 }
 
 a,
@@ -67,7 +67,7 @@ a:visited {
 }
 
 .container {
-  padding: 60px;
+  /* padding: 60px; */
   /* width: 100vw;
   height: 100vh; */
   /* background: #444; */

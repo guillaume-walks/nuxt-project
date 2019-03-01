@@ -7,6 +7,11 @@
       <input class="input" type="text" v-model="search" placeholder="Search">
       results ({{filtered.length}})
     </div>-->
+    
+    <Search />
+    results ({{filtered.length}})
+
+
     <section class="tiles">
       <Tile v-for="product of filtered" :key="product.id" :info="product" :callback="select"/>
     </section>
@@ -27,6 +32,7 @@ import Vue from "vue";
 import axios from "axios";
 import Tile from "~/components/tile";
 import Hero from "~/components/hero";
+import Search from "~/components/search";
 import Linear from "~/components/linear";
 import Paragraph from "~/components/paragraph";
 import BookingWidget from "booking-widget-vue";
@@ -42,7 +48,8 @@ export default {
     Tile,
     Hero,
     Paragraph,
-    Linear
+    Linear,
+    Search
   },
   data() {
     return {
