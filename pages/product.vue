@@ -8,8 +8,13 @@
       results ({{filtered.length}})
     </div>-->
     
-    <Search @clicked="callback"/>
-    results ({{filtered.length}})
+
+    <Search @changed="callback">
+      <h4>
+        {{filtered.length}} {{ suffix }} found
+      </h4>
+    </Search>
+    
 
 
     <section class="tiles">
@@ -63,9 +68,13 @@ export default {
     },
     callback (e) {
       console.log('callback,,,,', e)
+      this.search = e
     }
   },
   computed: {
+    suffix () {
+      return this.filtered.length > 1 ? 'results' : 'result'
+    }, 
     filtered() {
       return this.products.filter(item => {
         return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
