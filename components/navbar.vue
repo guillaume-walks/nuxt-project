@@ -28,6 +28,7 @@ export default {
       const panelInstance = this.$showPanel({
         component: Sidemenu,
         width: 350,
+        keepAlive: true,
         props: {
           //any data you want passed to your component
         }

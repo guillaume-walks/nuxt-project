@@ -1,5 +1,5 @@
 <template>
-  <nav id>
+  <nav class="sidepanel">
     <div class="inner">
       <ul class="links">
         <li>
