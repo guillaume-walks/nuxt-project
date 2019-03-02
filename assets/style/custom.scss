@@ -1,6 +1,31 @@
+$bg-main: #242943;
+$bg-dark: #21253a;
+$bg-main-2: #333856;
+$bg-main-3: #2e3450;
+
+// $bg-main: #263788;
+// $bg-dark: #939dce;
+
+body{
+  background: $bg-main;
+}
+#banner:after{
+  background: $bg-main;
+}
+.spotlights > section{
+  background: $bg-main-3;
+}
+.spotlights > section:nth-child(2n){
+  background: $bg-main-2;
+}
+
 #__nuxt{
+
+  #header{
+    background: $bg-dark;
+  }
   .button {
-    background:#242943;
+    background:inherit;
     &::before{
       // content: '';
       // position: absolute;
@@ -17,7 +42,7 @@
   // sidepanel overrride
   .sidepanel{
     padding: 30px 20px;
-    background:#242943;
+    background:$bg-main;
     height: 100%;
     
     > * ul {
@@ -39,7 +64,7 @@
         }
         a.primary{
           background: white;
-          color: #242943;
+          color: $bg-main;
           &:hover{
             background-color: #9bf1ff;
           }
