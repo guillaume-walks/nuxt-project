@@ -12,7 +12,11 @@
 
 <script>
 import { routes } from "@/static/route.js";
+import Sidemenu from "~/components/Sidemenu";
 export default {
+  components: {
+    Sidemenu
+  },
   data() {
     return {
       routes: routes,
@@ -21,8 +25,17 @@ export default {
   },
   methods: {
     toggle() {
-      const element = document.getElementsByTagName("body")[0];
-      element.classList.toggle("is-menu-visible");
+      const panelInstance = this.$showPanel({
+        component: Sidemenu,
+        width: 350,
+        props: {
+          //any data you want passed to your component
+        }
+      });
+      panelInstance.promise.then(result => {});
+
+      // const element = document.getElementsByTagName("body")[0];
+      // element.classList.toggle("is-menu-visible");
     }
   }
 };

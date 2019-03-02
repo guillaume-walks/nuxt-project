@@ -35,6 +35,10 @@ module.exports = {
   css: [
     '@/assets/style/custom.scss'
   ],
+  plugins: [
+    { src: '~/plugins/VueSlideoutPanel', ssr: false }
+
+  ],
   /*
   ** Customize the progress bar color
   */

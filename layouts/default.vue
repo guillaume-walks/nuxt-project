@@ -2,48 +2,24 @@
   <div>
     <Navbar></Navbar>
     <nuxt/>
-    <nav id="menu">
-      <div class="inner">
-        <ul class="links">
-          <li>
-            <a href="index.html">Home</a>
-          </li>
-          <li>
-            <a href="landing.html">Landing</a>
-          </li>
-          <li>
-            <a href="generic.html">Generic</a>
-          </li>
-          <li>
-            <a href="elements.html">Elements</a>
-          </li>
-        </ul>
-        <ul class="actions stacked">
-          <li>
-            <a href="#" class="button primary fit">Get Started</a>
-          </li>
-          <li>
-            <a href="#" class="button fit">Log In</a>
-          </li>
-        </ul>
-      </div>
-      <a class="close" href="#menu" @click.prevent="toggle">Close</a>
-    </nav>
+    <slideout-panel></slideout-panel>
   </div>
 </template>
 
 
 <script>
 import Navbar from "@/components/Navbar";
+import Sidemenu from "~/components/Sidemenu";
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Sidemenu
   },
   methods: {
     toggle() {
-      const element = document.getElementsByTagName("body")[0];
-      element.classList.toggle("is-menu-visible");
+      // const element = document.getElementsByTagName("body")[0];
+      // element.classList.toggle("is-menu-visible");
     }
   }
 };
