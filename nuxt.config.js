@@ -1,3 +1,6 @@
+import { productPath } from "./const/config";
+import axios from 'axios'
+
 const env = (process.env.DEPLOY_ENV === 'GH_PAGES') ? '/nuxt-project/' : ''
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
@@ -37,7 +40,6 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/VueSlideoutPanel', ssr: false }
-
   ],
   /*
   ** Customize the progress bar color
