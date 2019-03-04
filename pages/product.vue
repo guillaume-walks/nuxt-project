@@ -3,7 +3,10 @@
     <hero/>
 
     <Search @changed="callback">
-      <h4>{{filtered.length}} {{ suffix }} found</h4>
+      <h4>
+        <strong>{{filtered.length}}</strong>
+        {{ suffix }} found
+      </h4>
     </Search>
 
     <section class="tiles">
@@ -96,5 +99,5 @@ export default {
 };
 </script>
 
-<style >
+<style>
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar></Navbar>
+    <Navbar/>
     <nuxt/>
     <slideout-panel></slideout-panel>
   </div>

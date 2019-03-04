@@ -1,22 +1,29 @@
 <template>
-  <div class="container">
-    <h1>This is the contact page</h1>
-    <p><nuxt-link to="/">Home page</nuxt-link></p>
+  <div id="wrapper">
+    <Hero title="Contact"/>
   </div>
 </template>
 
 <script>
+import Hero from "~/components/hero";
+import Footer from "~/components/footer";
 export default {
-  transition: 'fadeOpacity'
-}
+  components: {
+    Hero,
+    Footer
+  },
+  transition: "fadeOpacity"
+};
 </script>
 
 <style>
-.fadeOpacity-enter-active, .fadeOpacity-leave-active {
-  transition: opacity .35s ease-out;
+.fadeOpacity-enter-active,
+.fadeOpacity-leave-active {
+  transition: opacity 0.35s ease-out;
 }
 
-.fadeOpacity-enter, .fadeOpacity-leave-active {
+.fadeOpacity-enter,
+.fadeOpacity-leave-active {
   opacity: 0;
 }
 </style>
