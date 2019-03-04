@@ -5,7 +5,7 @@
       <span>by HTML5 UP</span>
     </a>
     <nav>
-      <a href="#menu" @click.prevent="toggle">Menu</a>
+      <a href="#menu" @click.prevent="toggle(true)">Menu</a>
     </nav>
   </header>
 </template>
@@ -24,19 +24,20 @@ export default {
     };
   },
   methods: {
-    toggle() {
-      const panelInstance = this.$showPanel({
+    toggle(open) {
+      if (!open) {
+        this.panelInstance.hide();
+        return;
+      }
+      this.panelInstance = this.$showPanel({
         component: Sidemenu,
         width: 350,
         keepAlive: true,
         props: {
-          //any data you want passed to your component
+          onClose: this.toggle
         }
       });
-      panelInstance.promise.then(result => {});
-
-      // const element = document.getElementsByTagName("body")[0];
-      // element.classList.toggle("is-menu-visible");
+      this.panelInstance.promise.then(result => {});
     }
   }
 };

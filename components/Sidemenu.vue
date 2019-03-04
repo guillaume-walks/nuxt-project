@@ -2,34 +2,48 @@
   <nav class="sidepanel">
     <div class="inner">
       <ul class="links">
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="landing.html">Landing</a>
-        </li>
-        <li>
-          <a href="generic.html">Generic</a>
-        </li>
-        <li>
-          <a href="elements.html">Elements</a>
+        <!-- build routes from config -->
+        <li v-for="(route, index) of routes" :key="index">
+          <a @click.prevent="goTo(route.path)">{{route.name}}</a>
         </li>
       </ul>
       <ul class="actions stacked">
         <li>
-          <a href="#" class="button primary fit">Get Started</a>
+          <a class="button primary fit">Get Started</a>
         </li>
         <li>
-          <a href="#" class="button fit">Log In</a>
+          <a class="button fit" @click.prevent="() => onClose(false)">close</a>
         </li>
       </ul>
     </div>
-    <a class="close" href="#menu">Close</a>
   </nav>
 </template>
 
 <script>
-export default {};
+import { routes } from "@/static/route.js";
+
+export default {
+  data() {
+    return {
+      routes: routes
+    };
+  },
+  methods: {
+    // navigate to page and close menu
+    goTo(path) {
+      this.$router.push({
+        path: path
+      });
+      this.onClose(false);
+    }
+  },
+  props: {
+    onClose: {
+      type: Function,
+      required: true
+    }
+  }
+};
 </script>
 
 <style>
