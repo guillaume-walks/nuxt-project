@@ -2,7 +2,7 @@
   <section id="banner" class="major" style="background-position: center 0px;">
     <div class="inner">
       <header class="major">
-        <h1>Hero ...</h1>
+        <h1>{{title}}</h1>
       </header>
       <div class="content">
         <p>A responsive site template designed by HTML5 UP
@@ -19,7 +19,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    title: {
+      type: String,
+      default: "Hero..."
+    }
+  }
+};
 </script>
 
 <style>

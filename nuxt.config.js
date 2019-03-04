@@ -30,7 +30,7 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: env + '/css/style.css' },
-      { rel: 'stylesheet', href: env + '/css/font.css' },
+      { rel: 'stylesheet', href: env + 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
       { rel: 'stylesheet', href: env + '/css/override.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' }
     ]
