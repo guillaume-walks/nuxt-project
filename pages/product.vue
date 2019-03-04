@@ -1,12 +1,7 @@
 <template>
   <div id="wrapper">
     <hero/>
-    <!-- <div class="container">
-      <h1>Search a product by name...</h1>
-      <BookingWidget name="guillaume"/>
-      <input class="input" type="text" v-model="search" placeholder="Search">
-      results ({{filtered.length}})
-    </div>-->
+
     <Search @changed="callback">
       <h4>{{filtered.length}} {{ suffix }} found</h4>
     </Search>
@@ -73,13 +68,12 @@ export default {
       return this.products.filter(item => {
         return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
       });
-    },
+    }
     // products() {
     //   return this.$store.state.product.list;
     // }
   },
   asyncData({ params }) {
-    console.log(productPath);
     return axios
       .get(`${productPath}`)
       .then(res => {
@@ -87,8 +81,8 @@ export default {
       })
       .catch(e => {
         if (window) {
-          window.__data = { cur: window.location.href };
           console.log(e, "asyncData error:: API call...", window.__data);
+          window.__data = { cur: window.location.href };
           window.location.href = window.__data.cur + "product/";
         }
       });

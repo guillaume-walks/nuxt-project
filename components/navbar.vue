@@ -1,8 +1,8 @@
 <template>
   <header id="header" class="reveal alt">
     <a href="index.html" class="logo">
-      <strong>Forty</strong>
-      <span>by HTML5 UP</span>
+      <strong>FORTY</strong>
+      <span>by NUXT</span>
     </a>
     <nav>
       <a href="#menu" @click.prevent="toggle(true)">Menu</a>

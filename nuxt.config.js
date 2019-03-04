@@ -44,7 +44,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: 'red' },
+  loading: { color: 'white' },
   /*
   ** Build configuration
   */
@@ -67,8 +67,8 @@ module.exports = {
         })
       }
     },
-    extend (config, { isClient }) {
-      // Extend only webpack config for client-bundle
+    extend(config, { isClient }) {
+      // display source map as expected
       if (isClient) {
         config.devtool = '#source-map'
       }
