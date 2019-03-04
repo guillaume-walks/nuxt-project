@@ -74,13 +74,12 @@ export default {
         return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
       });
     },
-    products() {
-      return this.$store.state.product.list;
-    }
+    // products() {
+    //   return this.$store.state.product.list;
+    // }
   },
   asyncData({ params }) {
     console.log(productPath);
-
     return axios
       .get(`${productPath}`)
       .then(res => {
@@ -89,8 +88,7 @@ export default {
       .catch(e => {
         if (window) {
           window.__data = { cur: window.location.href };
-
-          console.log(e, "API call error...", window.__data);
+          console.log(e, "asyncData error:: API call...", window.__data);
           window.location.href = window.__data.cur + "product/";
         }
       });
