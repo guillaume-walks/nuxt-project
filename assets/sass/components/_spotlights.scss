@@ -3,7 +3,8 @@
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
-
+$dur: 0.5s;
+$effect: ease;
 /* Spotlights */
 
 	.spotlights {
@@ -25,20 +26,34 @@
 				display: block;
 				position: relative;
 				width: 30%;
+				overflow: hidden;
+
+				&:hover {
+					&:before{
+					opacity: 0.4;
+
+					}
+					img{
+						transform: scale(1.1);
+					}
+				}
 
 				img {
 					border-radius: 0;
 					display: block;
 					width: 100%;
+					transition: transform $dur $effect;
+					
 				}
 
 				&:before {
-					background: transparentize(_palette(bg), 0.1);
+					background: transparentize(_palette(bg), 0.7);
+					transition:  all 1.2s ease-out;
 					content: '';
 					display: block;
 					height: 100%;
 					left: 0;
-					opacity: 0;
+					opacity: 1;
 					position: absolute;
 					top: 0;
 					width: 100%;
