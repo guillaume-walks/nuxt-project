@@ -73,9 +73,9 @@
 
 			.content {
 				@include vendor('display', 'flex');
-				@include vendor('align-items', 'center');
+				// @include vendor('align-items', 'center');
 				margin: 0 0 _size(element-margin) 0;
-
+				
 				> * {
 					margin-right: 1.5em;
 					margin-bottom: 0;
@@ -90,6 +90,7 @@
 					font-weight: _font(weight-bold);
 					letter-spacing: _font(letter-spacing-alt);
 					text-transform: uppercase;
+					max-width: 50%;
 				}
 			}
 		}

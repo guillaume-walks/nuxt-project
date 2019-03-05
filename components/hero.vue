@@ -5,13 +5,13 @@
         <h1>{{title}}</h1>
       </header>
       <div class="content">
-        <p>A responsive site template designed by HTML5 UP
-          <br>and released under the Creative Commons.
-        </p>
+        <p>{{text}}</p>
         <ul class="actions">
           <li>
-            <a href="#one" class="button next scrolly">Get Started</a>
+            <a href="#one" class="button next scrolly">See More</a>
           </li>
+          <!-- option for more buttons -->
+          <slot></slot>
         </ul>
       </div>
     </div>
@@ -23,7 +23,12 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Hero..."
+      default: "Hero"
+    },
+    text: {
+      type: String,
+      default: `A responsive site template designed by HTML5 UP
+          and released under the Creative Commons.`
     }
   }
 };
