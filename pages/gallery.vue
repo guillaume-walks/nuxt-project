@@ -1,16 +1,15 @@
 <template>
   <div id="wrapper">
-    <hero/>
+    <hero title="Gallery" text="see various stuff"/>
 
-    <Search @changed="callback">
-      <h4>
-        <strong>{{filtered.length}}</strong>
-        {{ suffix }} found
-      </h4>
-    </Search>
+    <Paragraph/>
 
-    <section class="tiles">
-      <Tile v-for="product of filtered" :key="product.id" :info="product" :callback="select"/>
+    <section class="spotlights">
+      <Linear/>
+      <Linear/>
+      <Linear/>
+      <Linear/>
+      <Linear/>
     </section>
   </div>
 </template>
