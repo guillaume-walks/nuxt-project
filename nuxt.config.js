@@ -1,3 +1,7 @@
+import { productPath } from "./const/config";
+import axios from 'axios'
+
+const env = (process.env.DEPLOY_ENV === 'GH_PAGES') ? '/nuxt-project/' : ''
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/nuxt-project/'
@@ -25,24 +29,29 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css' },
-      { rel: 'stylesheet', href: '/css/style.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' }
+      { rel: 'stylesheet', href: env + 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
     ]
   },
+  css: [
+    '@/assets/sass/main.scss',
+    '@/assets/style/custom.scss'
+  ],
+  plugins: [
+    { src: '~/plugins/VueSlideoutPanel', ssr: false }
+  ],
   /*
   ** Customize the progress bar color
   */
-  loading: { color: 'red' },
+  loading: { color: 'white' },
   /*
   ** Build configuration
   */
   build: {
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true
-    },
+    // splitChunks: {
+    //   layouts: true,
+    //   pages: true,
+    //   commons: true
+    // },
     /*
     ** Run ESLint on save
     */
@@ -54,6 +63,12 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+    },
+    extend(config, { isClient }) {
+      // display source map as expected
+      if (isClient) {
+        config.devtool = '#source-map'
       }
     }
   }

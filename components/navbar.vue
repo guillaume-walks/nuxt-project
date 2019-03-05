@@ -1,45 +1,48 @@
 <template>
-  <div class="container-fluid">
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <!-- <img src="http://bulma.io/images/bulma-logo.png" alt="Logo"> -->
-          Project
-        </a>
-
-        <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div class="navbar-menu" :class="{ 'is-active': showNav }">
-        <div class="navbar-end">
-          <template v-for="route in routes">
-            <nuxt-link class="navbar-item" :key="route.name" :to="route.path">{{ route.name }}</nuxt-link>
-          </template>
-        </div>
-      </div>
+  <header id="header" class="reveal alt">
+    <a href="index.html" class="logo">
+      <strong>FORTY</strong>
+      <span>by NUXT</span>
+    </a>
+    <nav>
+      <a href="#menu" @click.prevent="toggle(true)">Menu</a>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>
 import { routes } from "@/static/route.js";
+import Sidemenu from "~/components/Sidemenu";
 export default {
+  components: {
+    Sidemenu
+  },
   data() {
     return {
       routes: routes,
       showNav: false
     };
+  },
+  methods: {
+    toggle(open) {
+      if (!open) {
+        this.panelInstance.hide();
+        return;
+      }
+      this.panelInstance = this.$showPanel({
+        component: Sidemenu,
+        width: 350,
+        keepAlive: true,
+        props: {
+          onClose: this.toggle
+        }
+      });
+      this.panelInstance.promise.then(result => {});
+    }
   }
 };
 </script>
 
 <style>
-.navbar-burger {
-  color: grey;
-}
 </style>
 
