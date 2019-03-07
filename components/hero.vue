@@ -8,7 +8,7 @@
         <p>{{text}}</p>
         <ul class="actions">
           <li>
-            <a href="#one" class="button next scrolly">See More</a>
+            <a @click="scrollTo" class="button next scrolly">See More</a>
           </li>
           <!-- option for more buttons -->
           <slot></slot>
@@ -19,7 +19,19 @@
 </template>
 
 <script>
+import CustomScroll from "./utils/scrollTo";
 export default {
+  methods: {
+    scrollTo() {
+      const dest = document.querySelectorAll("section")[1];
+      if (!dest) {
+        return;
+      }
+      CustomScroll(dest, 750, "easeOutQuad", () =>
+        console.log(`Just finished scrolling to ${window.pageYOffset}px`)
+      );
+    }
+  },
   props: {
     title: {
       type: String,
