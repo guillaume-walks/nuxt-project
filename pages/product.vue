@@ -76,7 +76,7 @@ export default {
         if (window) {
           console.log(e, "asyncData error:: API call...", window.__data);
           window.__data = { cur: window.location.href };
-          window.location.href = window.__data.cur + "product/";
+          window.location.href = window.__data.cur + "/product";
         }
       });
   }
