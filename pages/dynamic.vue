@@ -2,6 +2,13 @@
    <div id="wrapper">
     <component :is="model.name" v-bind="model.props"></component>
     <button @click="change">change</button>
+    <hr>
+    <component 
+      v-for="(comp, index) in list" 
+      :is="comp" 
+      :key="index"
+      v-bind="dyn[comp].props"
+      ></component>
   </div>
 </template>
 
@@ -24,18 +31,31 @@ export default {
           text: 'dynamoc text...'
         }
       },
-      paraP : {
+      paragraphP : {
         name: 'paragraph',
         props: {
 
         }
       },
-      list: ''
+      list: ['hero', 'hero', 'paragraph'],
+      dyn: {
+        hero : {
+          name: 'hero',
+          props: {
+            title: 'dynamic title',
+            text: 'dynamoc text...'
+          }
+        },
+        paragraph : {
+          name: 'paragraph',
+          props: {}
+        }
+      }
     }
   },
   computed: {
     model () {
-      return this.val ? this.heroP : this.paraP
+      return this.val ? this.heroP : this.paragraphP
     }
   },
   methods: {
