@@ -72,10 +72,13 @@ export default {
         return { products: res.data };
       })
       .catch(e => {
-        if (window) {
+         if (window) {
           console.log(e, "asyncData error:: API call...", window.__data);
-          window.__data = { cur: window.location.href };
-          window.location.href = window.__data.cur + "product/";
+          window.__data = window.location;
+          const path = window.location.pathname.split("/");
+          path[path.length - 1] = "gallery";
+          window.location.href = window.__data.origin + path.join("/");
+          // window.location.href = window.__data.cur + "/product";
         }
       });
   }
