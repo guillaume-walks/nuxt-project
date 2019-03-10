@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div class="wrapper">
     <hero/>
 
     <Search @changed="callback">

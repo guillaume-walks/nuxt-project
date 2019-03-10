@@ -3,16 +3,19 @@
     <Navbar/>
     <nuxt/>
     <slideout-panel></slideout-panel>
+    <Footer/>
   </div>
 </template>
 
 
 <script>
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/footer";
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
 };
 </script>

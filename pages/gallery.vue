@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div class="wrapper">
     <hero title="Gallery" text="see various stuff"/>
 
     <Paragraph/>
@@ -72,7 +72,7 @@ export default {
         return { products: res.data };
       })
       .catch(e => {
-         if (window) {
+        if (window) {
           console.log(e, "asyncData error:: API call...", window.__data);
           window.__data = window.location;
           const path = window.location.pathname.split("/");

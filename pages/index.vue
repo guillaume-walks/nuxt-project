@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div class="wrapper">
     <Hero title="Home page..."/>
     <div class="major">
       <div class="inner">
@@ -11,7 +11,6 @@
         </p>
       </div>
     </div>
-    <Footer/>
   </div>
 </template>
 

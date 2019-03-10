@@ -1,7 +1,6 @@
 <template>
-  <div id="wrapper">
+  <div class="wrapper">
     <Hero title="About..."/>
-    <Footer/>
   </div>
 </template>
 
