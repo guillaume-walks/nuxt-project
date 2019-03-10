@@ -34,7 +34,7 @@ module.exports = {
   },
   css: [
     '@/assets/sass/main.scss',
-    '@/assets/style/custom.scss'
+    // '@/assets/style/custom.scss'
   ],
   plugins: [
     { src: '~/plugins/VueSlideoutPanel', ssr: false }
