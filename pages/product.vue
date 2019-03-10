@@ -68,7 +68,7 @@ export default {
   },
   asyncData({ params }) {
     return axios
-      .get(`${productPath}`)
+      .get(productPath)
       .then(res => {
         return { products: res.data };
       })
