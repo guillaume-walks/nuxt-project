@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-[demo](https://guillaume-walks.github.io/nuxt-project/)
+[demo](https://guillaume-ader.netlify.com/)
 
 ``` bash
 # install dependencies
