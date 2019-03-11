@@ -1,5 +1,5 @@
 <template>
-  <header id="header" class="reveal alt">
+  <header id="header" ref="headerbar" class="reveal alt">
     <a href="index.html" class="logo">
       <strong>FORTY</strong>
       <span>by NUXT</span>
@@ -23,7 +23,20 @@ export default {
       showNav: false
     };
   },
+  mounted() {
+    window.addEventListener("scroll", this.onscroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.onscroll);
+  },
   methods: {
+    onscroll() {
+      if (window.pageYOffset > 50) {
+        this.$refs.headerbar.style.position = "fixed";
+      } else {
+        this.$refs.headerbar.style.position = "absolute";
+      }
+    },
     toggle(open) {
       if (!open) {
         this.panelInstance.hide();
