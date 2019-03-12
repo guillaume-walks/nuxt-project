@@ -17,7 +17,8 @@
     "deploy-gp": "npm run jsonserver & npm run generate:gh-pages && npm run commit && npm run deploy",
     "commit": "git add . && git commit -m 'add build'",
     "serve": "http-server ./dist -i",
-    "jsonserver": "json-server --watch server/db.json --port 4000"
+    "jsonserver": "json-server --watch server/db.json --port 4000",
+    "netlify": "npm run jsonserver & npm run generate"
   },
   "dependencies": {
     "axios": "^0.18.0",
