@@ -1,15 +1,21 @@
 <template>
-  <div class="container">
-    <h1 class="toto">Welcome! App</h1>
-    <p>
-      <nuxt-link to="/product">Product page</nuxt-link>
-    </p>
-    <p>
-      <nuxt-link to="/contact">contact page</nuxt-link>
-    </p>
+  <div id="wrapper">
+    <Hero title="Home page..."/>
+    <div class="major">
+      <div class="inner">
+        <p>
+          <nuxt-link to="/product/">Product page</nuxt-link>
+        </p>
+        <p>
+          <nuxt-link to="/contact">contact page</nuxt-link>
+        </p>
+      </div>
+    </div>
+    <Footer/>
   </div>
 </template>
 
+<<<<<<< HEAD
 <style>
 a.navbar-item:hover {
   background: rgb(80, 80, 80);
@@ -31,3 +37,15 @@ a.navbar-item:hover {
   padding: 60px;
 }
 </style>
+=======
+<script>
+import Hero from "~/components/hero";
+import Footer from "~/components/footer";
+export default {
+  components: {
+    Hero,
+    Footer
+  }
+};
+</script>
+>>>>>>> 2f1c7bf73f34bcf798f9503960555756033c6b7b

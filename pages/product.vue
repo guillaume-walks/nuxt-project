@@ -1,35 +1,50 @@
 <template>
-  <div class="container">
-    <h1>Search a product by name...</h1>
-    <BookingWidget name="guillaume"/>
-    <input class="input" type="text" v-model="search" placeholder="Search">
-    results ({{filtered.length}})
-    <div class="main-container" v-if="products && filtered.length">
-      <div class v-for="product of filtered" :key="product.id">
-        <card :info="product" :callback="select"/>
-      </div>
-    </div>
-    <template v-else>
-      <error-message/>
-    </template>
-    <ul v-if="errors && errors.length">
-      <li v-for="error of errors" :key="error">{{error.message}}</li>
-    </ul>
+  <div id="wrapper">
+    <hero/>
+
+    <Search @changed="callback">
+      <h4>
+        <strong>{{filtered.length}}</strong>
+        {{ suffix }} found
+      </h4>
+    </Search>
+
+    <section class="tiles">
+      <Tile v-for="product of filtered" :key="product.id" :info="product" :callback="select"/>
+    </section>
+
+    <Paragraph/>
+
+    <section class="spotlights">
+      <Linear/>
+      <Linear/>
+      <Linear/>
+      <Linear/>
+      <Linear/>
+    </section>
   </div>
 </template>
 <script>
 import Vue from "vue";
 import axios from "axios";
-import BookingWidget from "booking-widget-vue";
+import Tile from "~/components/tile";
+import Hero from "~/components/hero";
+import Search from "~/components/search";
+import Linear from "~/components/linear";
+import Paragraph from "~/components/paragraph";
 import { productPath } from "@/const/config";
 import Card from "@/components/card";
 import ErrorMessage from "@/components/error-message";
 
-Vue.use(BookingWidget);
 export default {
   components: {
     Card,
-    ErrorMessage
+    ErrorMessage,
+    Tile,
+    Hero,
+    Paragraph,
+    Linear,
+    Search
   },
   data() {
     return {
@@ -42,35 +57,47 @@ export default {
     select(el) {
       console.log(el);
       this.selected = el;
+    },
+    callback(e) {
+      console.log("callback,,,,", e);
+      this.search = e;
     }
   },
   computed: {
+    suffix() {
+      return this.filtered.length > 1 ? "results" : "result";
+    },
     filtered() {
       return this.products.filter(item => {
         return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
       });
     }
+    // products() {
+    //   return this.$store.state.product.list;
+    // }
   },
   asyncData({ params }) {
-    console.log(productPath);
-    return axios.get(`${productPath}`).then(res => {
-      return { products: res.data };
-    });
+    return axios
+      .get(`${productPath}`)
+      .then(res => {
+        return { products: res.data };
+      })
+      .catch(e => {
+        if (window) {
+          console.log(e, "asyncData error:: API call...", window.__data);
+          window.__data = { cur: window.location.href };
+          window.location.href = window.__data.cur + "product/";
+        }
+      });
   }
+  // async fetch({ store, error, payload }) {
+  //   console.log(store, error, payload);
+  //   if (!store.getters["product/isFetched"]) {
+  //     await store.dispatch("product/fetchProduct");
+  //   }
+  // }
 };
 </script>
 
-<style >
-.container {
-  background: #222;
-}
-.main-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.main-container > div {
-  width: 31%;
-  margin-bottom: 3.5%;
-}
+<style>
 </style>

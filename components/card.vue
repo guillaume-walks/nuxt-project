@@ -44,10 +44,3 @@ export default {
   }
 };
 </script>
-<style>
-div.content > p {
-  text-overflow: ellipsis;
-  height: 100px;
-  overflow: hidden;
-}
-</style>
