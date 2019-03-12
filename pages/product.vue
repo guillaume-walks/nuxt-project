@@ -1,28 +1,16 @@
 <template>
-  <div id="wrapper">
+  <div class="wrapper">
     <hero/>
-    <!-- <div class="container">
-      <h1>Search a product by name...</h1>
-      <BookingWidget name="guillaume"/>
-      <input class="input" type="text" v-model="search" placeholder="Search">
-      results ({{filtered.length}})
-    </div>-->
+
     <Search @changed="callback">
-      <h4>{{filtered.length}} {{ suffix }} found</h4>
+      <h4>
+        <strong>{{filtered.length}}</strong>
+        {{ suffix }} found
+      </h4>
     </Search>
 
     <section class="tiles">
       <Tile v-for="product of filtered" :key="product.id" :info="product" :callback="select"/>
-    </section>
-
-    <Paragraph/>
-
-    <section class="spotlights">
-      <Linear/>
-      <Linear/>
-      <Linear/>
-      <Linear/>
-      <Linear/>
     </section>
   </div>
 </template>
@@ -73,23 +61,25 @@ export default {
       return this.products.filter(item => {
         return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1;
       });
-    },
+    }
     // products() {
     //   return this.$store.state.product.list;
     // }
   },
   asyncData({ params }) {
-    console.log(productPath);
     return axios
-      .get(`${productPath}`)
+      .get(productPath)
       .then(res => {
         return { products: res.data };
       })
       .catch(e => {
         if (window) {
-          window.__data = { cur: window.location.href };
           console.log(e, "asyncData error:: API call...", window.__data);
-          window.location.href = window.__data.cur + "product/";
+          window.__data = window.location;
+          const path = window.location.pathname.split("/");
+          path[path.length - 1] = "product";
+          window.location.href = window.__data.origin + path.join("/");
+          // window.location.href = window.__data.cur + "/product";
         }
       });
   }
@@ -102,5 +92,5 @@ export default {
 };
 </script>
 
-<style >
+<style>
 </style>

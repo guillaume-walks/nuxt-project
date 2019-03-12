@@ -1,26 +1,21 @@
 <template>
   <div>
-    <Navbar></Navbar>
+    <Navbar/>
     <nuxt/>
     <slideout-panel></slideout-panel>
+    <Footer/>
   </div>
 </template>
 
 
 <script>
-import Navbar from "@/components/Navbar";
-import Sidemenu from "~/components/Sidemenu";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default {
   components: {
     Navbar,
-    Sidemenu
-  },
-  methods: {
-    toggle() {
-      // const element = document.getElementsByTagName("body")[0];
-      // element.classList.toggle("is-menu-visible");
-    }
+    Footer
   }
 };
 </script>
@@ -30,23 +25,12 @@ export default {
 html,
 body {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  /* background: #222; */
-  /* color: white; */
-  /* width: 100vw;
-  height: 100vh; */
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 a,
 a:visited {
   text-decoration: none;
-}
-
-.container {
-  /* padding: 60px; */
-  /* width: 100vw;
-  height: 100vh; */
-  /* background: #444; */
 }
 
 .page-enter-active {

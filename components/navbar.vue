@@ -1,11 +1,11 @@
 <template>
-  <header id="header" class="reveal alt">
+  <header id="header" ref="headerbar" class="reveal alt">
     <a href="index.html" class="logo">
-      <strong>Forty</strong>
-      <span>by HTML5 UP</span>
+      <strong>FORTY</strong>
+      <span>by NUXT</span>
     </a>
     <nav>
-      <a href="#menu" @click.prevent="toggle">Menu</a>
+      <a href="#menu" @click.prevent="toggle(true)">Menu</a>
     </nav>
   </header>
 </template>
@@ -23,20 +23,34 @@ export default {
       showNav: false
     };
   },
+  mounted() {
+    window.addEventListener("scroll", this.onscroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.onscroll);
+  },
   methods: {
-    toggle() {
-      const panelInstance = this.$showPanel({
+    onscroll() {
+      if (window.pageYOffset > 50) {
+        this.$refs.headerbar.style.position = "fixed";
+      } else {
+        this.$refs.headerbar.style.position = "absolute";
+      }
+    },
+    toggle(open) {
+      if (!open) {
+        this.panelInstance.hide();
+        return;
+      }
+      this.panelInstance = this.$showPanel({
         component: Sidemenu,
         width: 350,
         keepAlive: true,
         props: {
-          //any data you want passed to your component
+          onClose: this.toggle
         }
       });
-      panelInstance.promise.then(result => {});
-
-      // const element = document.getElementsByTagName("body")[0];
-      // element.classList.toggle("is-menu-visible");
+      this.panelInstance.promise.then(result => {});
     }
   }
 };

@@ -29,14 +29,12 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: env + '/css/style.css' },
-      { rel: 'stylesheet', href: env + '/css/font.css' },
-      { rel: 'stylesheet', href: env + '/css/override.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' }
+      { rel: 'stylesheet', href: env + 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
     ]
   },
   css: [
-    '@/assets/style/custom.scss'
+    '@/assets/sass/main.scss',
+    // '@/assets/style/custom.scss'
   ],
   plugins: [
     { src: '~/plugins/VueSlideoutPanel', ssr: false }
@@ -44,7 +42,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: 'red' },
+  loading: { color: 'white' },
   /*
   ** Build configuration
   */
@@ -67,8 +65,8 @@ module.exports = {
         })
       }
     },
-    extend (config, { isClient }) {
-      // Extend only webpack config for client-bundle
+    extend(config, { isClient }) {
+      // display source map as expected
       if (isClient) {
         config.devtool = '#source-map'
       }

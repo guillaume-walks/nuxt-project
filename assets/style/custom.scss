@@ -1,10 +1,11 @@
-$bg-main: #242943;
-$bg-dark: #21253a;
-$bg-main-2: #333856;
-$bg-main-3: #2e3450;
+// $bg-main: #242943;
+// $bg-dark: #21253a;
+$bg-dark: _palette(header);
 
-// $bg-main: #263788;
-// $bg-dark: #939dce;
+$bg-main: _palette(bg);
+// used for spotlight Linear components
+// $bg-main-2: #333856;
+// $bg-main-3: #2e3450;
 
 body{
   background: $bg-main;
@@ -12,12 +13,12 @@ body{
 #banner:after{
   background: $bg-main;
 }
-.spotlights > section{
-  background: $bg-main-3;
-}
-.spotlights > section:nth-child(2n){
-  background: $bg-main-2;
-}
+// .spotlights > section{
+//   // background: $bg-main-3;
+// }
+// .spotlights > section:nth-child(2n){
+//   // background: $bg-main-2;
+// }
 
 #__nuxt{
 
@@ -26,20 +27,9 @@ body{
   }
   .button {
     background:inherit;
-    &::before{
-      // content: '';
-      // position: absolute;
-      // background: red;
-      // opacity: 0.3;
-      // top: -20px;
-      // width: 100%;
-      // height: 100%;
-      // z-index: -1;
-      // left: -20px;
-    }
   }
 
-  // sidepanel overrride
+  // sidepanel override
   .sidepanel{
     padding: 30px 20px;
     background:$bg-main;
@@ -57,22 +47,21 @@ body{
     text-transform: uppercase;
       list-style: none;
       li {
-        border-top: solid 1px rgba(212, 212, 255, 0.1);
+        border-top: solid 1px _palette(border);
         text-decoration: none;
         a {
+          cursor: pointer;
           border-bottom: 0;
         }
         a.primary{
           background: white;
           color: $bg-main;
           &:hover{
-            background-color: #9bf1ff;
+            background-color: _palette(highlight);
           }
         }
       }
     }
-    
-
   }
   #header{
     z-index: 99;

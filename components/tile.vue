@@ -27,7 +27,7 @@ export default {
   methods: {
     rand() {
       const t = Math.floor(Math.random() * 100);
-      return `https://picsum.photos/200/300?image=${t}`;
+      return `https://picsum.photos/500/500?image=${t}`;
     }
   },
   created() {

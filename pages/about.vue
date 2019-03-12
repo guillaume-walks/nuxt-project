@@ -1,9 +1,16 @@
 <template>
-  <div class="container">
-    <h1>This is the ABOUT page</h1>
-    <p>
-      lorem sdomsdf sdfj ksd fksd fksd fkj dsf 
-    </p>
+  <div class="wrapper">
+    <Hero title="About..."/>
   </div>
 </template>
 
+<script>
+import Hero from "~/components/hero";
+import Footer from "~/components/footer";
+export default {
+  components: {
+    Hero,
+    Footer
+  }
+};
+</script>
