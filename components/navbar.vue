@@ -44,15 +44,12 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
 .navbar-burger {
   color: grey;
 }
-.navbar{
+.navbar {
   text-transform: uppercase;
   font-weight: 700;
 }
-=======
->>>>>>> 2f1c7bf73f34bcf798f9503960555756033c6b7b
 </style>
 
