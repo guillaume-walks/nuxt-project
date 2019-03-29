@@ -23,6 +23,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "nuxt": "^2.4.5",
+    "vue-lazyload": "^1.2.6",
     "vue2-slideout-panel": "^2.2.2"
   },
   "devDependencies": {
