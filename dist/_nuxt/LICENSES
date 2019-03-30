@@ -36,6 +36,18 @@
  */
 
 /*!
+ * vue-no-ssr v1.1.1
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * Vue-Lazyload.js v1.2.6
+ * (c) 2018 Awe <hilongjw@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
  * vue2-slideout-panel v2.2.2 (https://github.com/officert/vue-slideout-panel)
  * (c) 2019 Tim Officer
  * Released under the MIT License.
@@ -142,9 +154,3 @@
 /*!************************!*\
   !*** ./src/service.js ***!
   \************************/
-
-/*!
- * vue-no-ssr v1.1.1
- * (c) 2018-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
