@@ -1,5 +1,10 @@
 <template>
-  <section id="banner" class="major" style="background-position: center 0px;">
+  <!-- <section
+    id="banner"
+    class="major"
+    :style="'background-image: url(' + backgroundImg + '); background-position: center 0px;'"
+  >-->
+  <section id="banner" class="major" v-lazy:background-image="img">
     <div class="inner">
       <header class="major">
         <h1>{{title}}</h1>
@@ -20,7 +25,30 @@
 
 <script>
 import CustomScroll from "./utils/scrollTo";
+import Vue from "vue";
+import VueLazyload from "vue-lazyload";
+
+Vue.use(VueLazyload);
+
 export default {
+  data() {
+    return {
+      img: {
+        src: "/images/code.jpg",
+        error: "/images/banner.jpg",
+        loading: "/images/loading.gif"
+      }
+    };
+  },
+  computed: {
+    // img() {
+    //   return {
+    //     src: "/images/code.jpg",
+    //     error: "/images/banner.jpg",
+    //     loading: "/images/loading.gif"
+    //   };
+    // }
+  },
   methods: {
     scrollTo() {
       const dest = document.querySelectorAll("section")[1];
@@ -36,6 +64,10 @@ export default {
     title: {
       type: String,
       default: "Hero"
+    },
+    backgroundImg: {
+      type: String,
+      default: "/_nuxt/assets/images/code.jpg"
     },
     text: {
       type: String,

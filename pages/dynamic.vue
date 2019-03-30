@@ -30,7 +30,20 @@ export default {
         name: "paragraph",
         props: {}
       },
-      list: ["hero", "hero", "paragraph"],
+      list: [
+        "hero",
+        "hero",
+        "paragraph",
+        "hero",
+        "hero",
+        "hero",
+        "hero",
+        "hero",
+        "hero",
+        "hero",
+        "hero",
+        "hero"
+      ],
       dyn: {
         hero: {
           name: "hero",
