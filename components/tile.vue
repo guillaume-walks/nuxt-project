@@ -1,6 +1,6 @@
 <template>
-  <!-- <article :style="`background-image: url(${info.url});`"> -->
-  <article :style="`background-image: url(${rand()});`">
+  <!-- <article  :style="`background-image: url(${rand()});`"> -->
+  <article v-lazy:background-image="rand()">
     <span class="image" style="display: none;">
       <img :src="info.url" alt>
     </span>
@@ -27,7 +27,12 @@ export default {
   methods: {
     rand() {
       const t = Math.floor(Math.random() * 100);
-      return `https://picsum.photos/500/500?image=${t}`;
+      const img = `https://picsum.photos/500/500?image=${t}`;
+      return {
+        src: img,
+        error: "/images/banner.jpg",
+        loading: "/images/loading.gif"
+      };
     }
   },
   created() {

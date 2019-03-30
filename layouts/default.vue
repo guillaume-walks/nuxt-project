@@ -11,7 +11,9 @@
 <script>
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-
+import VueLazyload from "vue-lazyload";
+import Vue from "vue";
+Vue.use(VueLazyload);
 export default {
   components: {
     Navbar,

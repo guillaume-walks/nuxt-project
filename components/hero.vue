@@ -25,10 +25,9 @@
 
 <script>
 import CustomScroll from "./utils/scrollTo";
-import Vue from "vue";
-import VueLazyload from "vue-lazyload";
-
-Vue.use(VueLazyload);
+// import Vue from "vue";
+// import VueLazyload from "vue-lazyload";
+// Vue.use(VueLazyload);
 
 export default {
   data() {
