@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <hero title="Gallery" text="see various stuff"/>
+    <Hero title="Gallery" text="see various stuff"/>
 
     <Paragraph/>
 
@@ -16,24 +16,17 @@
 <script>
 import Vue from "vue";
 import axios from "axios";
-import Tile from "~/components/tile";
-import Hero from "~/components/hero";
-import Search from "~/components/search";
-import Linear from "~/components/linear";
-import Paragraph from "~/components/paragraph";
 import { productPath } from "@/const/config";
 import Card from "@/components/card";
 import ErrorMessage from "@/components/error-message";
+
+import * as Components from "~/components/utils/importAll";
 
 export default {
   components: {
     Card,
     ErrorMessage,
-    Tile,
-    Hero,
-    Paragraph,
-    Linear,
-    Search
+    ...Components
   },
   data() {
     return {

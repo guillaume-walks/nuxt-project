@@ -1,16 +1,18 @@
 <template>
   <div class="wrapper">
     <Hero title="About..."/>
+    <Paragraph/>
+    <Sidemenu/>
+
+    <Search/>
   </div>
 </template>
 
 <script>
-import Hero from "~/components/hero";
-import Footer from "~/components/footer";
+import * as Components from "~/components/utils/importAll";
 export default {
   components: {
-    Hero,
-    Footer
+    ...Components
   }
 };
 </script>

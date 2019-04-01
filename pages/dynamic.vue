@@ -8,13 +8,12 @@
 </template>
 
 <script>
-import hero from "~/components/hero";
-import paragraph from "~/components/paragraph";
+import * as Components from "~/components/utils/importAll";
+
 export default {
   name: "dynamicpage",
   components: {
-    hero,
-    paragraph
+    ...Components
   },
   data() {
     return {
