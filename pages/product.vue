@@ -9,6 +9,8 @@
       </h4>
     </Search>
 
+    <component v-for="(comp, index) in config" :is="comp.type" :key="index" v-bind="comp.data"></component>
+
     <section class="tiles">
       <Tile v-for="product of filtered" :key="product.id" :info="product" :callback="select"/>
     </section>
@@ -21,6 +23,7 @@ import { productPath } from "@/const/config";
 import Card from "@/components/card";
 import ErrorMessage from "@/components/error-message";
 import * as Components from "~/components/utils/importAll";
+import Config from "../static/jsondata/product.json";
 
 export default {
   components: {
@@ -59,10 +62,14 @@ export default {
     // }
   },
   asyncData({ params }) {
+    console.log(Config);
     return axios
       .get(productPath)
       .then(res => {
-        return { products: res.data };
+        return {
+          products: res.data,
+          config: Config
+        };
       })
       .catch(e => {
         if (window) {
