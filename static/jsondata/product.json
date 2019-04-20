@@ -9,5 +9,13 @@
   {
     "type": "hero",
     "data": {}
+  },
+  {
+    "type": "tiles",
+    "data": {
+      "list": [
+        {}
+      ]
+    }
   }
 ]
