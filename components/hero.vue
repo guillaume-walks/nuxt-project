@@ -33,9 +33,9 @@ export default {
   data() {
     return {
       img: {
-        src: "/images/code.jpg",
-        error: "/images/banner.jpg",
-        loading: "/images/loading.gif"
+        src: "images/code.jpg",
+        error: "images/banner.jpg",
+        loading: "images/loading.gif"
       }
     };
   },
@@ -66,7 +66,7 @@ export default {
     },
     backgroundImg: {
       type: String,
-      default: "/_nuxt/assets/images/code.jpg"
+      default: "_nuxt/assets/images/code.jpg"
     },
     text: {
       type: String,
