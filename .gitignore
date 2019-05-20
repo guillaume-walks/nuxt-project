@@ -9,6 +9,7 @@ npm-debug.log
 
 # Nuxt build
 .nuxt
+.contentful.json
 
 # Nuxt generate
 # dist

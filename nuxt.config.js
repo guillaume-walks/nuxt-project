@@ -1,5 +1,7 @@
 import { productPath } from "./const/config";
 import axios from 'axios'
+const config = require('./.contentful.json')
+
 
 const env = (process.env.DEPLOY_ENV === 'GH_PAGES') ? '/nuxt-project/' : ''
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
@@ -13,6 +15,12 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 module.exports = {
   ...routerBase,
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: config.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+  },
   server: {
     port: 8000, // default: 3000
     host: 'localhost', // default: localhost, '0.0.0.0'
