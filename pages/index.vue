@@ -16,10 +16,18 @@
 
 <script>
 import * as Components from "~/components/utils/importAll";
+import {createClient} from '~/plugins/contentful.js'
+
+const client = createClient()
 
 export default {
   components: {
     ...Components
+  },
+  asyncData({env}) {
+      client.getEntry('34MlmiuMgU8wKCOOIkAuMy')
+        .then(entry => console.log(entry))
+        .catch(err => console.log(err));
   }
 };
 </script>
