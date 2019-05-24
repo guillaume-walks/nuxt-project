@@ -7,7 +7,8 @@
       <p>{{ text }}</p>
       <ul v-if="button" class="actions">
         <li>
-          <a :href="button.link" class="button next">{{ button.label }}</a>
+          <nuxt-link :to="button.link" class="button next">{{button.label}}</nuxt-link>
+          <!-- <a :href="button.link" class="button next">{{ button.label }}</a> -->
         </li>
       </ul>
     </div>
