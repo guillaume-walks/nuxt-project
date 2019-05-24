@@ -2,12 +2,12 @@
   <section id>
     <div class="inner">
       <header class="major">
-        <h2>Massa libero</h2>
+        <h2>{{ title }}</h2>
       </header>
-      <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-      <ul class="actions">
+      <p>{{ text }}</p>
+      <ul v-if="button" class="actions">
         <li>
-          <a href="landing.html" class="button next">Get Started</a>
+          <a :href="button.link" class="button next">{{ button.label }}</a>
         </li>
       </ul>
     </div>
@@ -15,7 +15,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    button: {
+      type: [Object, Boolean],
+      default: false
+    },
+    text: {
+      type: String,
+      default: `Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.`
+    },
+    title: String
+  },
+  mounted () {
+    console.log(this)
+  }
+};
 </script>
 
 <style>
