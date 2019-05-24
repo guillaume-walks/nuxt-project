@@ -1,7 +1,7 @@
 <template>
   <section>
     <a href="generic.html" class="image">
-      <img height="350px" :src="rand()" alt data-position="center center">
+      <img :src="rand()" alt data-position="center center">
     </a>
     <div class="content">
       <div class="inner">
