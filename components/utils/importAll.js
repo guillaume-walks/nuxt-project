@@ -3,7 +3,7 @@ import Linear from '~/components/linear'
 import Search from '~/components/search'
 import Hero from '~/components/hero'
 import Sidemenu from '~/components/Sidemenu'
-import Tile from '~/components/tile'
+import Tiles from '~/components/tiles'
 
 
 export {
@@ -12,5 +12,5 @@ export {
   Search,
   Hero,
   Sidemenu,
-  Tile
+  Tiles
 }

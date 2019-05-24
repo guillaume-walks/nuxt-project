@@ -1,5 +1,4 @@
 <template>
-  <!-- <article  :style="`background-image: url(${rand()});`"> -->
   <article v-lazy:background-image="rand()">
     <span class="image" style="display: none;">
       <img :src="info.url" alt>
@@ -17,17 +16,19 @@
 <script>
 export default {
   props: {
-    info: {
-      required: true
-    },
+    info: Object,
+    // url: String,
+    // email: String,
+    // name: String,
+    // date: String,
     callback: {
       type: Function
     }
   },
   methods: {
-    rand() {
+    rand() {      
       const t = Math.floor(Math.random() * 100);
-      const img = `https://picsum.photos/500/500?image=${t}`;
+      const img = this.info.url ? this.info.url : `https://picsum.photos/500/500?image=${t}`;
       return {
         src: img,
         error: "/images/banner.jpg",
