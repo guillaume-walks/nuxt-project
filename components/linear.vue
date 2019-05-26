@@ -11,7 +11,7 @@
         <p>{{text}}</p>
         <ul v-if="button" class="actions">
           <li>
-            <a :href="button.link" class="button next">{{ button.label || 'see more'}}</a>
+            <nuxt-link :to="button.link" class="button next">{{ button.label || 'see more'}}</nuxt-link>
           </li>
         </ul>
       </div>
