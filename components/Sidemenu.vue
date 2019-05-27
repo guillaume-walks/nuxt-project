@@ -4,7 +4,7 @@
       <ul class="links">
         <!-- build routes from config -->
         <li v-for="(route, index) of routes" :key="index">
-          <a @click.prevent="goTo(route.path)">{{route.name}}</a>
+          <a @click.prevent="goTo(route)">{{route.name}}</a>
         </li>
       </ul>
       <ul class="actions stacked">
@@ -30,9 +30,10 @@ export default {
   },
   methods: {
     // navigate to page and close menu
-    goTo(path) {
+    goTo(route) {
       this.$router.push({
-        path: path
+        path: route.path,
+        params: { pageUid: route.uid }
       });
       this.onClose(false);
     }
