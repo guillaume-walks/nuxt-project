@@ -32,14 +32,14 @@ export default {
   },
   asyncData({env}) {  
     return fetchContentful('5yNZEBFkjWOBIdQaIzHumK')
-    .then(function (res) { 
-      return {
-        content: res.fields.config,
-        metaTags: res.fields.metaTitle,
-        title: res.fields.title
-      }
-    })
-    .catch(err => console.log(err))
+      .then(function (res) { 
+        return {
+          content: res.fields.config,
+          metaTags: res.fields.metaTitle,
+          title: res.fields.title
+        }
+      })
+      .catch(err => console.log(err))
   }
 };
 </script>
