@@ -6,12 +6,12 @@
     <div class="content">
       <div class="inner">
         <header class="major">
-          <h3>Orci maecenas</h3>
+          <h3>{{title}}</h3>
         </header>
-        <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-        <ul class="actions">
+        <p>{{text}}</p>
+        <ul v-if="button" class="actions">
           <li>
-            <a href="generic.html" class="button">Learn more</a>
+            <nuxt-link :to="button.link" class="button next">{{ button.label || 'see more'}}</nuxt-link>
           </li>
         </ul>
       </div>
@@ -21,6 +21,23 @@
 
 <script>
 export default {
+  props: {
+    button: {
+      type: [Object, Boolean],
+      default: false
+    },
+    text: {
+      type: String,
+      default: `Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.`
+    },
+    title: {
+      type: String,
+      default: "Orci maecenas"
+    }
+  },
+  mounted() {
+    console.log(this);
+  },
   methods: {
     rand() {
       const t = Math.floor(Math.random() * 100);
