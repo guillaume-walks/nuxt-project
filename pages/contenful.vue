@@ -11,6 +11,7 @@ import { fetchContentful } from '~/pages/utils.js'
 // const client = createClient()
 
 export default {
+  watchQuery: true,
   components: {
     ...Components
   },
@@ -31,8 +32,25 @@ export default {
     }
   },
   asyncData({env}) {  
+
+    const page = '3kw0QgZtzCFw3P2MiYwpIP'
+    return fetchContentful(page)
+      .then((res) => { 
+        console.log(res)
+        const el = res.fields.pageStructure
+        let obj = []
+        for (var i in el) {
+          obj[i] = {
+            type: el[i].fields.type,
+            props: el[i].fields.items.map(e => e.fields)
+          }
+        }
+        console.log(obj)
+
+      }).catch(err => console.log(err))
+
     return fetchContentful('5yNZEBFkjWOBIdQaIzHumK')
-      .then(function (res) { 
+      .then((res) => { 
         return {
           content: res.fields.config,
           metaTags: res.fields.metaTitle,
