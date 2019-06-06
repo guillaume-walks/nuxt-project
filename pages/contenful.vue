@@ -36,16 +36,30 @@ export default {
     const page = '3kw0QgZtzCFw3P2MiYwpIP'
     return fetchContentful(page)
       .then((res) => { 
-        console.log(res)
         const el = res.fields.pageStructure
         let obj = []
         for (var i in el) {
           obj[i] = {
             type: el[i].fields.type,
-            props: el[i].fields.items.map(e => e.fields)
+            props: el[i].fields.items.map(e => {
+              for (var j in e.fields) {
+                if(j === 'image') {
+                  e.fields.img = {
+                    description: e.fields.image.fields.description,
+                    title: e.fields.image.fields.title,
+                    ...e.fields.image.fields.file
+                  }
+                }
+              }
+              delete e.fields.image
+              return e.fields
+            })
           }
         }
         console.log(obj)
+        return {
+          content: obj
+        }
 
       }).catch(err => console.log(err))
 

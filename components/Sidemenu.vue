@@ -6,15 +6,7 @@
         <li v-for="(route, index) of routes" :key="index">
           <a @click.prevent="goTo(route)">{{route.name}}</a>
         </li>
-         <li v-for="(route, index) of routes" :key="index">
-          <a @click.prevent="goTo(route)">{{route.name}}</a>
-        </li>
-         <li v-for="(route, index) of routes" :key="index">
-          <a @click.prevent="goTo(route)">{{route.name}}</a>
-        </li>
-         <li v-for="(route, index) of routes" :key="index">
-          <a @click.prevent="goTo(route)">{{route.name}}</a>
-        </li>
+      
       </ul>
       <ul class="actions stacked">
         <li>
