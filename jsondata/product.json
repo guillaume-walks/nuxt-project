@@ -1,0 +1,21 @@
+[
+  {
+    "type": "hero",
+    "data": {
+      "title": "hello I am the title of the page...",
+      "text": "in this page you will find..."
+    }
+  },
+  {
+    "type": "hero",
+    "data": {}
+  },
+  {
+    "type": "tiles",
+    "data": {
+      "list": [
+        {}
+      ]
+    }
+  }
+]
