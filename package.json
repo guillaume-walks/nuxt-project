@@ -21,7 +21,7 @@
     "netlify": "npm run jsonserver & npm run generate"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "contentful": "^7.6.0",
     "nuxt": "^2.4.5",
     "vue-lazyload": "^1.2.6",
